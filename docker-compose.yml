@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   plex-export:
-    image: plex-export:1.0.0
+    image: blake0192/plex-export:latest
     container_name: plex-export
     hostname: plex-export
     restart: always
@@ -16,7 +16,7 @@ services:
       - PLEX_URL=url_here
       - PLEX_TOKEN=token_here
       - PHP_DATE_TIMEZONE=America/Chicago
-      - REFRESH_RATE=300 # 5 Minutes
+      - REFRESH_RATE=5m
 
 #networks:
   #traefik_proxy:
