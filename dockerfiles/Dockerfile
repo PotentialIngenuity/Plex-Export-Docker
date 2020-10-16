@@ -4,10 +4,12 @@ LABEL MAINTAINER="Blake Mammen"
 LABEL VERISION="1.0.0"
 
 # Initialize needed Environment Variables
-ENV PLEX_URL= \
-    PLEX_TOKEN= \
-    PHP_DATE_TIMEZONE=America/Chicago \
-    REFRESH_RATE=1800
+ENV PLEX_URL=http://localhost:32400
+ENV PLEX_TOKEN=
+ENV PLEX_SECTIONS=all
+ENV PLEX_SORT_SKIP_WORDS=""
+ENV REFRESH_RATE=60m
+ENV PHP_DATE_TIMEZONE=America/Chicago
 
 # Clone project and put in proper place
 RUN git clone https://github.com/blake1029384756/Plex-Export.git /tmp/plex-export && \

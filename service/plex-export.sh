@@ -3,11 +3,8 @@ source /root/.bashrc
 
 while true
 do
-    if [ -z $PLEX_TOKEN ]
-    then    
-        php /app/cli.php -plex-url=$PLEX_URL
-    else
-        php /app/cli.php -plex-url=$PLEX_URL -token=$PLEX_TOKEN
-    fi
+    
+    php /app/cli.php -plex-url=$PLEX_URL -token=$PLEX_TOKEN -sections="$PLEX_SECTIONS" -sort-skip-words="$PLEX_SORT_SKIP_WORDS"
+    
     sleep $REFRESH_RATE
 done
